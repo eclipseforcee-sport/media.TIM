@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eclipse Force</title>
+
+<title>ECLIPSE FORCE E-SPORTS</title>
 
 <style>
 * {
@@ -12,1074 +14,931 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #070b14;
-    color: white;
+:root {
+    --bg: #080c14;
+    --navy: #101d32;
+    --navy2: #14243a;
+    --blue: #23466f;
+    --light: #8eb8e8;
+    --border: #263a54;
+    --text: #aab8ca;
 }
 
-/* ================= HEADER ================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: #f1f5f9;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* HEADER */
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(7, 11, 20, 0.96);
-    border-bottom: 1px solid #202a3d;
-    backdrop-filter: blur(10px);
+    background: #0c1422;
+    padding: 32px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
 }
 
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    min-height: 72px;
-    padding: 0 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+.brand {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 5px;
 }
 
-.logo {
-    font-size: 21px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    white-space: nowrap;
+.brand span {
+    color: var(--light);
 }
+
+header p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+/* NAVIGATION */
 
 nav {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    text-decoration: none;
-    color: #dce3f7;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: .5px;
-    padding: 10px 16px;
-    border-radius: 9px;
-    border: 1px solid transparent;
-    transition: .25s ease;
-}
-
-nav a:hover {
-    color: white;
-    background: #11192b;
-    border-color: #34457d;
-}
-
-.nav-button {
-    color: #8fa8ff !important;
-    border: 1px solid #34457d !important;
-    background: #0b1020;
-}
-
-.nav-button:hover {
-    color: white !important;
-    background: #151d2e !important;
-    border-color: #596fff !important;
-    transform: translateY(-1px);
-}
-
-/* ================= HOME ================= */
-
-.hero {
-    min-height: auto;
-    padding: 75px 25px 38px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-
-    text-align: center;
+    gap: 12px;
+    padding: 17px;
+    background: #0a111e;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.badge {
-    color: #8fa8ff;
-    border: 1px solid #34457d;
-    background: #0d1321;
-
-    padding: 8px 14px;
-    border-radius: 30px;
-
+nav button {
+    padding: 12px 25px;
+    background: transparent;
+    color: #b6c5d8;
+    border: 1px solid var(--border);
+    cursor: pointer;
     font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    transition: .3s;
 }
 
-.hero h1 {
-    font-size: clamp(38px, 7vw, 70px);
-    line-height: 1.05;
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    color: #8fa8ff;
-}
-
-.hero p {
-    max-width: 650px;
-    color: #aab3c5;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-/* ================= DIVISION ================= */
-
-.divisions {
-    max-width: 1050px;
-    margin: 0 auto 75px;
-    padding: 0 25px;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.division-card {
-    background: #0d1321;
-    border: 1px solid #222c40;
-    border-radius: 18px;
-    padding: 30px;
-
-    text-decoration: none;
+nav button:hover,
+nav button.active {
+    background: var(--blue);
     color: white;
-
-    transition: .3s ease;
+    border-color: var(--light);
 }
 
-.division-card:hover {
-    transform: translateY(-6px);
-    border-color: #596fff;
-    box-shadow: 0 12px 35px rgba(65, 83, 180, .16);
-}
-
-.division-number {
-    color: #6f83ff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.division-card h2 {
-    font-size: 25px;
-    margin-bottom: 8px;
-}
-
-.division-card p {
-    color: #9da8bd;
-    line-height: 1.6;
-}
-
-/* ================= PAGE ================= */
+/* PAGE */
 
 .page {
     display: none;
     max-width: 1100px;
     margin: auto;
-    padding: 60px 25px 80px;
+    padding: 45px 22px;
 }
 
-.page h1 {
-    font-size: 38px;
-    margin-bottom: 12px;
+.page.active {
+    display: block;
+    animation: appear .4s ease;
 }
 
-.page-intro {
-    color: #9da8bd;
-    margin-bottom: 35px;
-    line-height: 1.7;
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* ================= COLLAPSIBLE TEAM ================= */
+/* HERO */
 
-.team-box {
-    background: #0d1321;
-    border: 1px solid #222c40;
-    border-radius: 14px;
-    margin-bottom: 12px;
+.hero {
+    position: relative;
     overflow: hidden;
+    background:
+        linear-gradient(120deg, #14243a, #0c1422 80%);
+    border: 1px solid var(--border);
+    padding: 75px 25px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.team-title {
-    padding: 20px 22px;
-    cursor: pointer;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    transition: .25s ease;
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid #8eb8e822;
+    border-radius: 50%;
+    top: -130px;
+    right: -50px;
 }
 
-.team-title:hover {
-    background: #11192a;
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #8eb8e822;
+    border-radius: 50%;
+    bottom: -110px;
+    left: -50px;
 }
 
-.team-title span {
-    color: #8fa8ff;
-    font-size: 22px;
-    font-weight: normal;
+.hero h2 {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 900;
+    letter-spacing: 4px;
 }
 
-.team-content {
-    display: none;
-    padding: 0 22px 22px;
+.hero .subtitle {
+    color: var(--light);
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 15px;
 }
 
-.team-box.open .team-content {
-    display: block;
-}
-
-.team-content p {
-    color: #aab3c5;
-    line-height: 1.8;
-}
-
-/* ================= ROSTER ================= */
-
-.roster {
-    display: grid;
-    gap: 12px;
-}
-
-.player {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    background: #101827;
-    border: 1px solid #222c40;
-    border-radius: 12px;
-    padding: 17px 20px;
-}
-
-.player-info strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.player-info span {
-    color: #8995ab;
-    font-size: 13px;
-}
-
-.player a {
-    color: #8fa8ff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.player a:hover {
-    color: white;
-}
-
-/* ================= NEWS ================= */
-
-.news-container {
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.news-card {
-    display: block;
-    text-decoration: none;
-    color: white;
-
-    background: #0d1321;
-    border: 1px solid #222c40;
-    border-radius: 15px;
-    padding: 25px;
-
-    transition: .3s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-6px);
-    border-color: #596fff;
-    box-shadow: 0 10px 30px rgba(65, 83, 180, .18);
-}
-
-.news-number {
-    color: #6f83ff;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 14px;
-}
-
-.news-card h2 {
-    font-size: 21px;
-    line-height: 1.35;
-    margin-bottom: 12px;
-}
-
-.news-card p {
-    color: #9da8bd;
-    line-height: 1.6;
+.hero p {
+    max-width: 680px;
+    margin: 22px auto 0;
+    color: var(--text);
     font-size: 14px;
+    line-height: 2;
 }
 
-.news-date {
-    margin-top: 20px;
-    color: #68758d;
-    font-size: 12px;
-}
+/* SECTION TITLE */
 
-/* ================= MANAGEMENT ================= */
-
-.management-item {
-    background: #0d1321;
-    border: 1px solid #222c40;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    overflow: hidden;
-}
-
-.management-title {
-    padding: 20px;
-    cursor: pointer;
-    font-weight: bold;
-
+.section-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 42px 0 20px;
+    gap: 10px;
 }
 
-.management-title span {
-    color: #8fa8ff;
-    font-size: 22px;
-    font-weight: normal;
+.section-title {
+    font-size: 17px;
+    letter-spacing: 2px;
+    border-left: 3px solid var(--light);
+    padding-left: 13px;
 }
 
-.management-content {
+.section-number {
+    font-size: 11px;
+    color: #718ba9;
+    letter-spacing: 2px;
+}
+
+/* AWARDS */
+
+.award {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(110deg, #14243a, #101a2a);
+    border: 1px solid var(--border);
+    padding: 28px;
+    transition: .3s;
+}
+
+.award:hover {
+    border-color: var(--light);
+}
+
+.award h3 {
+    font-size: 14px;
+    color: #c5d8ed;
+    letter-spacing: 1px;
+}
+
+.award strong {
+    font-size: 40px;
+    color: var(--light);
+}
+
+/* ACCORDION */
+
+.accordion {
+    border: 1px solid var(--border);
+    margin-bottom: 13px;
+    background: #101a2a;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.accordion:hover {
+    border-color: #45688f;
+}
+
+.acc-button {
+    width: 100%;
+    padding: 21px;
+    border: none;
+    background: transparent;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.acc-button:hover {
+    background: #172940;
+}
+
+.acc-button .arrow {
+    color: var(--light);
+    transition: .3s;
+    font-size: 13px;
+}
+
+.acc-button.open .arrow {
+    transform: rotate(180deg);
+}
+
+.acc-content {
     display: none;
-    padding: 0 20px 20px;
+    padding: 12px 17px 20px;
+    border-top: 1px solid var(--border);
 }
 
-.management-item.open .management-content {
+.acc-content.show {
     display: block;
+    animation: appear .3s ease;
 }
 
-/* ================= RESPONSIVE ================= */
+/* PLAYER CARD */
 
-@media (max-width: 850px) {
+.player-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #142136;
+    border: 1px solid #263a54;
+    padding: 17px;
+    margin: 10px 0;
+    transition: .3s;
+}
 
-    .navbar {
-        flex-direction: column;
-        justify-content: center;
-        padding: 18px 15px;
-        gap: 15px;
+.player-card:hover {
+    background: #192b44;
+    border-color: #527ba8;
+    transform: translateX(3px);
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.player-number {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #203d5e;
+    color: var(--light);
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.player-name h3 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.player-name p {
+    color: var(--text);
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+/* INSTAGRAM BUTTON */
+
+.ig-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: transparent;
+    color: #b8d7f8;
+    border: 1px solid #45688f;
+    padding: 10px 13px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+.ig-link:hover {
+    background: var(--blue);
+    color: white;
+    border-color: var(--light);
+}
+
+/* MANAGEMENT */
+
+.management-card {
+    position: relative;
+    background: linear-gradient(110deg, #142136, #101a2a);
+    border: 1px solid var(--border);
+    padding: 27px;
+    margin-bottom: 16px;
+    transition: .3s;
+}
+
+.management-card:hover {
+    border-color: #527ba8;
+}
+
+.management-card h3 {
+    color: var(--light);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+}
+
+.management-card h2 {
+    font-size: 20px;
+}
+
+.management-card p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.position-number {
+    float: right;
+    color: #405a78;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0c1422;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 30px 15px;
+    color: #8495aa;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #52657c;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    header {
+        padding: 27px 15px;
+    }
+
+    .brand {
+        font-size: 21px;
+        letter-spacing: 3px;
     }
 
     nav {
-        justify-content: center;
+        padding: 13px 8px;
+        gap: 8px;
     }
 
-    nav a {
-        padding: 8px 12px;
-        font-size: 12px;
+    nav button {
+        padding: 11px 15px;
+        font-size: 10px;
+    }
+
+    .page {
+        padding: 28px 14px;
     }
 
     .hero {
-        padding-top: 55px;
-        padding-bottom: 30px;
+        padding: 55px 18px;
     }
 
-    .divisions {
-        grid-template-columns: 1fr;
+    .hero h2 {
+        letter-spacing: 2px;
     }
 
-    .news-container {
-        grid-template-columns: 1fr;
+    .section-title {
+        font-size: 14px;
+    }
+
+    .player-card {
+        padding: 13px 10px;
+        gap: 8px;
+    }
+
+    .player-info {
+        gap: 9px;
+    }
+
+    .player-number {
+        width: 32px;
+        height: 32px;
+        font-size: 10px;
+    }
+
+    .player-name h3 {
+        font-size: 12px;
+    }
+
+    .player-name p {
+        font-size: 10px;
+    }
+
+    .ig-link {
+        padding: 9px 8px;
+        font-size: 9px;
+        letter-spacing: 0;
+    }
+
+    .management-card {
+        padding: 22px;
     }
 }
 
-@media (max-width: 500px) {
-
-    .logo {
-        font-size: 18px;
-    }
-
-    nav {
-        width: 100%;
-        gap: 7px;
-    }
-
-    nav a {
-        flex: 1;
-        text-align: center;
-        padding: 9px 7px;
-    }
-
-    .page h1 {
-        font-size: 30px;
-    }
-
-    .player {
-        flex-direction: column;
+@media(max-width:360px) {
+    .player-card {
         align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .player-card .ig-link {
+        margin-left: 41px;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <div class="navbar">
+    <h1 class="brand">ECLIPSE <span>FORCE</span> E-SPORTS</h1>
 
-        <div class="logo">
-            ECLIPSE FORCE
-        </div>
-
-        <nav>
-            <a href="#" onclick="showHome()">HOME</a>
-
-            <a href="#" class="nav-button"
-               onclick="showPage('news')">
-                NEWS EF
-            </a>
-
-            <a href="#" class="nav-button"
-               onclick="showPage('management')">
-                MANAGEMENT
-            </a>
-
-            <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-               target="_blank"
-               class="nav-button">
-                INSTAGRAM
-            </a>
-        </nav>
-
-    </div>
+    <p>
+        Selamat datang di website resmi Tim Eclipse Force,
+        silahkan pilih menu mana yang ingin kalian kunjungi.
+    </p>
 </header>
 
+<!-- NAVIGATION -->
 
-<!-- ================= HOME ================= -->
+<nav>
+    <button class="active" onclick="openPage('eclipse',this)">
+        ECLIPSE FORCE
+    </button>
 
-<main id="home">
+    <button onclick="openPage('management',this)">
+        MANAJEMEN
+    </button>
+</nav>
+
+
+<!-- =========================
+     ECLIPSE FORCE PAGE
+========================= -->
+
+<main id="eclipse" class="page active">
 
     <section class="hero">
 
-        <div class="badge">
-            OFFICIAL E-SPORT TEAM
+        <h2>ECLIPSE FORCE</h2>
+
+        <div class="subtitle">
+            OFFICIAL E-SPORTS TEAM
         </div>
 
-        <h1>
-            Tim E-sport<br>
-            <span>Eclipse Force</span>
-        </h1>
-
         <p>
-            Selamat datang di-website resmi Tim E-sport Eclipse Force
+            Eclipse Force didirikan pada tanggal 8 Oktober 2025
+            namun baru diresmikan pada tanggal 26 Agustus 2026,
+            dengan mengikuti tournament Online/Offline
+            dalam divisi Mobile Legends.
         </p>
 
     </section>
 
 
-    <section class="divisions">
+    <!-- AWARDS -->
 
-        <a href="#" class="division-card"
-           onclick="showPage('mobile-legends')">
+    <div class="section-heading">
+        <h3 class="section-title">AWARDS / TROPHIES</h3>
+        <span class="section-number">01 / AWARDS</span>
+    </div>
 
-            <div class="division-number">
-                DIVISION 01
+    <div class="award">
+        <h3>🏆 TOTAL ACHIEVEMENTS</h3>
+        <strong>0</strong>
+    </div>
+
+
+    <!-- MAIN ROSTER -->
+
+    <div class="section-heading">
+        <h3 class="section-title">MAIN ROSTER</h3>
+        <span class="section-number">02 / PLAYERS</span>
+    </div>
+
+    <div class="accordion">
+
+        <button class="acc-button" onclick="toggle(this)">
+            <span>01. OFFICIAL MAIN ROSTER</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="acc-content">
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">01</div>
+                    <div class="player-name">
+                        <h3>Rahmat Fauzi</h3>
+                        <p>Main Roster · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_RAHMAT/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
             </div>
 
-            <h2>Mobile Legends</h2>
-
-            <p>
-                ECLIPSE FORCE
-            </p>
-
-        </a>
-
-
-        <a href="#" class="division-card"
-           onclick="showPage('free-fire')">
-
-            <div class="division-number">
-                DIVISION 02
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">02</div>
+                    <div class="player-name">
+                        <h3>Syair Dwi Baginda</h3>
+                        <p>Main Roster · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_SYAIR/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
             </div>
 
-            <h2>Free Fire</h2>
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">03</div>
+                    <div class="player-name">
+                        <h3>Luthfi Rizqullah</h3>
+                        <p>Main Roster · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_LUTHFI/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
 
-            <p>
-                IOG HATD BY ECLIPSE FORCE
-            </p>
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">04</div>
+                    <div class="player-name">
+                        <h3>Dennis Al Buchori</h3>
+                        <p>Main Roster · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_DENNNIS/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
 
-        </a>
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">05</div>
+                    <div class="player-name">
+                        <h3>Fahri Ahmad Fauzi</h3>
+                        <p>Main Roster · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_FAHRI/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
 
-    </section>
+        </div>
+    </div>
+
+
+    <!-- SUBSTITUTE ROSTER -->
+
+    <div class="section-heading">
+        <h3 class="section-title">SUBSTITUTE ROSTER</h3>
+        <span class="section-number">03 / RESERVES</span>
+    </div>
+
+    <div class="accordion">
+
+        <button class="acc-button" onclick="toggle(this)">
+            <span>02. SUBSTITUTE PLAYERS</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="acc-content">
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">06</div>
+                    <div class="player-name">
+                        <h3>Kia Putra Ramadhan</h3>
+                        <p>Substitute · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_KIA/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">07</div>
+                    <div class="player-name">
+                        <h3>Muhammad Ibnu Akbar</h3>
+                        <p>Substitute · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_IBNU/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- STORY PLAYER -->
+
+    <div class="section-heading">
+        <h3 class="section-title">STORY PLAYER</h3>
+        <span class="section-number">04 / STORIES</span>
+    </div>
+
+    <div class="accordion">
+
+        <button class="acc-button" onclick="toggle(this)">
+            <span>03. PLAYER STORIES</span>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="acc-content">
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">01</div>
+                    <div class="player-name">
+                        <h3>Muhammad Alvino</h3>
+                        <p>Player Story · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_ALVINO/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">02</div>
+                    <div class="player-name">
+                        <h3>Rasya Eka</h3>
+                        <p>Player Story · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_RASYA/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">03</div>
+                    <div class="player-name">
+                        <h3>Zico</h3>
+                        <p>Player Story · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_ZICO/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="player-number">04</div>
+                    <div class="player-name">
+                        <h3>Rendy</h3>
+                        <p>Player Story · Eclipse Force</p>
+                    </div>
+                </div>
+                <a class="ig-link" href="https://www.instagram.com/USERNAME_RENDY/" target="_blank">
+                    INSTAGRAM ↗
+                </a>
+            </div>
+
+        </div>
+    </div>
 
 </main>
 
 
-<!-- ================= NEWS ================= -->
+<!-- =========================
+     MANAGEMENT PAGE
+========================= -->
 
-<section id="news" class="page">
+<main id="management" class="page">
 
-    <h1>News Eclipse Force</h1>
+    <section class="hero">
 
-    <p class="page-intro">
-        Berita dan informasi terbaru seputar perkembangan Eclipse Force.
-    </p>
+        <h2>MANAGEMENT</h2>
 
-    <div class="news-container">
+        <div class="subtitle">
+            ECLIPSE FORCE OFFICIAL
+        </div>
 
-        <a href="news1.html" class="news-card">
-            <div class="news-number">NEWS 01</div>
+        <p>
+            Meet the people behind Eclipse Force.
+            The team management responsible for organization,
+            administration and team development.
+        </p>
 
-            <h2>
-                Turnamen Pertama Tim Eclipse Force
-            </h2>
-
-            <p>
-                Bagaimana perjalanan turnamen pertama Tim Eclipse Force dalam
-                TOCUP ThirtOneCup.
-            </p>
-
-            <div class="news-date">
-                3 Oktober 2026
-            </div>
-        </a>
+    </section>
 
 
-        <a href="news2.html" class="news-card">
-            <div class="news-number">NEWS 02</div>
-
-            <h2>
-                Divisi Free Fire Terus Mengembangkan Performa
-            </h2>
-
-            <p>
-                IOG HATD BY Eclipse Force terus berusaha meningkatkan
-                performa dan pengalaman kompetitif para pemain.
-            </p>
-
-            <div class="news-date">
-                27 September 2026
-            </div>
-        </a>
+    <div class="section-heading">
+        <h3 class="section-title">OFFICIAL MANAGEMENT</h3>
+        <span class="section-number">05 / MANAGEMENT</span>
+    </div>
 
 
-        <a href="news3.html" class="news-card">
-            <div class="news-number">NEWS 03</div>
+    <!-- MANAGER -->
 
-            <h2>
-                Eclipse Force Perkuat Struktur Tim
-            </h2>
+    <div class="management-card">
 
-            <p>
-                Manajemen menjadi salah satu bagian penting dalam
-                perkembangan dan keberlangsungan tim Eclipse Force.
-            </p>
+        <span class="position-number">01</span>
 
-            <div class="news-date">
-                27 September 2026
-            </div>
+        <h3>TEAM MANAGER</h3>
+
+        <h2>Khairan Ananta</h2>
+
+        <p>
+            Responsible for managing and coordinating
+            the Eclipse Force team.
+        </p>
+
+        <a class="ig-link"
+           href="https://www.instagram.com/USERNAME_MANAGER/"
+           target="_blank">
+            INSTAGRAM MANAGER ↗
         </a>
 
     </div>
 
-</section>
 
+    <!-- ADMINISTRATION -->
 
-<!-- ================= MOBILE LEGENDS ================= -->
+    <div class="management-card">
 
-<section id="mobile-legends" class="page">
+        <span class="position-number">02</span>
 
-    <h1>Mobile Legends</h1>
+        <h3>ADMINISTRATION</h3>
 
-    <p class="page-intro">
-        ECLIPSE FORCE
-    </p>
+        <h2>Nasya Apriliani Putri</h2>
 
+        <p>
+            Responsible for team administration,
+            documentation and organizational records.
+        </p>
 
-    <!-- ABOUT TEAM -->
-
-    <div class="team-box">
-
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
-
-            About Team
-            <span>+</span>
-
-        </div>
-
-        <div class="team-content">
-
-            <p>
-                Tim Eclipse Force divisi Mobile Legends berdiri tahun 2025
-                yang berganti nama menjadi Galacticc Force yang kemudian
-                diganti kembali dengan nama sebelumnya yaitu Eclipse Force
-                hingga sekarang.
-            </p>
-
-        </div>
+        <a class="ig-link"
+           href="https://www.instagram.com/USERNAME_ADMIN/"
+           target="_blank">
+            INSTAGRAM ADMIN ↗
+        </a>
 
     </div>
 
 
-    <!-- ACHIEVEMENTS -->
+    <!-- COACH -->
 
-    <div class="team-box">
+    <div class="management-card">
 
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
+        <span class="position-number">03</span>
 
-            Achievements
-            <span>+</span>
+        <h3>TEAM COACH</h3>
 
-        </div>
+        <h2>DI CARI LOWONGAN COACH</h2>
 
-        <div class="team-content">
+        <p>
+            Posisi Coach Eclipse Force saat ini masih tersedia.
+            Open Recruitment.
+        </p>
 
-            <p>
-                Belum tersedia
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ROSTER -->
-
-    <div class="team-box">
-
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
-
-            Roster
-            <span>+</span>
-
-        </div>
-
-        <div class="team-content">
-
-            <div class="roster">
-
-                <div class="player">
-                    <div class="player-info">
-                        <strong>01 ANANTA</strong>
-                        <span>KHAIRAN ANANTA</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/raaa4nnnn?stkn=MW5oZm0xN3F1a2RmaA=="
-                       target="_blank">
-                        Instagram
-                    </a>
-                </div>
-
-
-                <div class="player">
-                    <div class="player-info">
-                        <strong>02 FAHRI</strong>
-                        <span>FAHRI AHMAD FAUZI</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-                       target="_blank">
-                        Instagram
-                    </a>
-                </div>
-
-
-                <div class="player">
-                    <div class="player-info">
-                        <strong>03 CARRERA</strong>
-                        <span>MUHAMMAD ALVINO</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/pinownow?stkn=MWdiYWxhd2hhbWtkaw=="
-                       target="_blank">
-                        Instagram
-                    </a>
-                </div>
-
-
-                <div class="player">
-                    <div class="player-info">
-                        <strong>04 SYAKKY</strong>
-                        <span>RASYA EKA</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/fathurstarr?stkn=OGFocjN4YXIzenM5"
-                       target="_blank">
-                        Instagram
-                    </a>
-                </div>
-
-
-                <div class="player">
-                    <div class="player-info">
-                        <strong>05 DENNIS</strong>
-                        <span>DENNIS AL BUCKHORI</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-                       target="_blank">
-                        Instagram
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
+        <a class="ig-link"
+           href="https://www.instagram.com/USERNAME_COACH/"
+           target="_blank">
+            INSTAGRAM COACH ↗
+        </a>
 
     </div>
 
+</main>
 
-    <!-- RESERVE -->
 
-    <div class="team-box">
+<!-- BACKGROUND MUSIC -->
 
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
+<audio id="backgroundMusic" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-            Reserve
-            <span>+</span>
 
-        </div>
+<!-- FOOTER -->
 
-        <div class="team-content">
-
-            <div class="roster">
-
-                <div class="player">
-
-                    <div class="player-info">
-                        <strong>01 YUUTA</strong>
-                        <span>KIA PUTRA</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/michaelyuuta?stkn=cHJmbDVoZG96cXRt"
-                       target="_blank">
-                        Instagram
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FREE FIRE ================= -->
-
-<section id="free-fire" class="page">
-
-    <h1>Free Fire</h1>
-
-    <p class="page-intro">
-        IOG HATD BY ECLIPSE FORCE
-    </p>
-
-
-    <!-- ABOUT TEAM -->
-
-    <div class="team-box">
-
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
-
-            About Team
-            <span>+</span>
-
-        </div>
-
-        <div class="team-content">
-
-            <p>
-                Tim HATD yang bergabung dalam komunitas IOG kemudian berkolaborasi diTim Eclipse Force yang menjadi
-                sponsor IOG HATD yang kemudian menjadi IOG HATD by ECLIPSEFORCE
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ACHIEVEMENTS -->
-
-    <div class="team-box">
-
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
-
-            Achievements
-            <span>+</span>
-
-        </div>
-
-        <div class="team-content">
-
-            <p>
-                1. Sering menjuarai fast turnamen kategori 2 ribu dan selalu mendapatkan juara, baik juara 1–3.<br><br>
-
-                2. Sering menjuarai fast turnamen kategori 3 ribu dan selalu mendapatkan juara, baik juara 1–3.<br><br>
-
-                3. Sering menjuarai fast turnamen kategori 5 ribu dan selalu mendapatkan juara, baik juara 1–3.<br><br>
-
-                4. Sering menjuarai fast turnamen kategori 10 ribu dan selalu mendapatkan juara, baik juara 1–3.<br><br>
-
-                5. Sering menjuarai scrim kategori 5 ribu dengan mendapatkan juara 1–3.<br><br>
-
-                6. Sering menjuarai scrim kategori 10 ribu dengan mendapatkan juara 1–3.<br><br>
-
-                7. Sering masuk top 3 saat scrim internal di IOG Community E-Sport.<br><br>
-
-                8. Juara 3 saat scrim external melawan tim e-sport Sonic dan Sneaky.<br><br>
-
-                9. Berpengalaman mengikuti turnamen offline dan sering menembus babak final saat turnamen offline.<br><br>
-
-                10. Pernah masuk top 3 saat mengikuti liga yang diselenggarakan oleh komunitas Free Fire.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ROSTER -->
-
-    <div class="team-box">
-
-        <div class="team-title"
-             onclick="toggleSection(this.parentElement)">
-
-            Roster
-            <span>+</span>
-
-        </div>
-
-        <div class="team-content">
-
-            <div class="roster">
-
-                <div class="player">
-
-                    <div class="player-info">
-                        <strong>01 KAI</strong>
-                        <span>RENDY</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-                       target="_blank">
-                        Instagram
-                    </a>
-
-                </div>
-
-
-                <div class="player">
-
-                    <div class="player-info">
-                        <strong>02 ZICCC</strong>
-                        <span>ZICO</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/ziccc_z?stkn=MW5nYWFnajVmcHJoMw=="
-                       target="_blank">
-                        Instagram
-                    </a>
-
-                </div>
-
-
-                <div class="player">
-
-                    <div class="player-info">
-                        <strong>03 CARRERA</strong>
-                        <span>MUHAMMAD ALVINO</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/pinownow?stkn=MTVvNWJ2eGV6Y2xhMg=="
-                       target="_blank">
-                        Instagram
-                    </a>
-
-                </div>
-
-
-                <div class="player">
-
-                    <div class="player-info">
-                        <strong>04 FEDERICO</strong>
-                        <span>RASYA EKA</span>
-                    </div>
-
-                    <a href="https://www.instagram.com/fathurstarr?stkn=OGFocjN4YXIzenM5"
-                       target="_blank">
-                        Instagram
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MANAGEMENT ================= -->
-
-<section id="management" class="page">
-
-    <h1>Manajemen Eclipse Force</h1>
-
-    <p class="page-intro">
-        Informasi mengenai struktur dan pengelolaan Tim Eclipse Force.
-    </p>
-
-
-    <div class="management-item">
-
-        <div class="management-title"
-             onclick="toggleSection(this.parentElement)">
-
-            Informasi Manajemen
-
-            <span>+</span>
-
-        </div>
-
-
-        <div class="management-content">
-
-            <div class="player">
-
-                <div class="player-info">
-                    <strong>OFFICIAL TIM</strong>
-                    <span>Khairan Ananta</span>
-                </div>
-
-                <a href="https://www.instagram.com/raaa4nnnn?stkn=MW5oZm0xN3F1a2RmaA=="
-                   target="_blank">
-                    Instagram
-                </a>
-
-            </div>
-
-
-            <div class="player">
-
-                <div class="player-info">
-                    <strong>COACH DIVISI MOBILE LEGENDS</strong>
-                    <span>Belum tersedia</span>
-                </div>
-
-                <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-                   target="_blank">
-                    Instagram
-                </a>
-
-            </div>
-
-
-            <div class="player">
-
-                <div class="player-info">
-                    <strong>COACH DIVISI FREE FIRE</strong>
-                    <span>Belum tersedia</span>
-                </div>
-
-                <a href="https://www.instagram.com/eclipseforce.id?stkn=MXRpYXNucGprMDNtNA=="
-                   target="_blank">
-                    Instagram
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+<footer>
+    ECLIPSE FORCE 2026©
+    <p>OFFICIAL E-SPORTS TEAM</p>
+</footer>
 
 
 <script>
 
-/* ================= PAGE NAVIGATION ================= */
+// NAVIGATION
 
-function showPage(pageId) {
+function openPage(id, button) {
 
-    document.getElementById("home").style.display = "none";
-
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
     });
 
-    const selectedPage = document.getElementById(pageId);
+    document.getElementById(id).classList.add('active');
 
-    if (selectedPage) {
-        selectedPage.style.display = "block";
-    }
+    document.querySelectorAll('nav button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
 
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: 'smooth'
     });
 }
 
 
-/* ================= HOME ================= */
+// ACCORDION OPEN / CLOSE
 
-function showHome() {
+function toggle(button) {
 
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
+    const content = button.nextElementSibling;
 
-    document.getElementById("home").style.display = "block";
+    content.classList.toggle('show');
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
-
-/* ================= ACCORDION ================= */
-
-function toggleSection(element) {
-
-    element.classList.toggle("open");
-
-    const icon = element.querySelector(".team-title span, .management-title span");
-
-    if (element.classList.contains("open")) {
-        icon.textContent = "−";
-    } else {
-        icon.textContent = "+";
-    }
+    button.classList.toggle('open');
 
 }
+
+
+// BACKGROUND MUSIC
+
+const music = document.getElementById("backgroundMusic");
+
+music.volume = 0.5;
+
+window.addEventListener("load", function() {
+
+    music.play().catch(function() {
+        // Browser dapat membatasi autoplay.
+        // Musik dapat berjalan setelah interaksi pengguna.
+    });
+
+});
 
 </script>
 
